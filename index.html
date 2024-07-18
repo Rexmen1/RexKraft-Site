@@ -6,6 +6,7 @@
 
         <!--=============== FAVICON ===============-->
         <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
 
         <!--=============== BOXICONS ===============-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -45,7 +46,7 @@
                             <a href="#new" class="nav__link">Rules</a>
                         </li>
 
-                        <a href="#" class="button button--ghost">Support</a>
+                        <a href="https://discord.rexkraft.com" class="button button--ghost">Discord</a>
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -89,8 +90,9 @@
                                                                         </p>
 
                                     <div class="home__buttons">
-                                        <a href="#" class="button">play.rexkraft.com</a>
-                                        <a href="#" class="button--link button--flex">Track Record <i class='bx bx-right-arrow-alt button__icon'></i></a>
+                                        <a href="#" class="button" id="copyText" data-copy="play.rexkraft.com" onclick="copyToClipboardAndShowFeedback(this)">play.rexkraft.com<span id="feedback" class="copied"></span></a>
+
+                                        <a href="#" class="button"><span data-playercounter-ip="play.rexkraft.com">0</span> Online now</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,8 +112,8 @@
                                 </div>
     
                                 <div class="home__data">
-                                    <h3 class="home__subtitle">#2 top Best duo</h3>
-                                    <h1 class="home__title">BRING BACK <br> MY COTTON <br> CANDY</h1>
+                                    <h3 class="home__subtitle">FEATURE | RANKUPS</h3>
+                                    <h1 class="home__title">RANKUPS</h1>
                                     <p class="home__description">Adino steals cotton candy from his brother and eats them all in one bite, 
                                         a hungry beast. Grahami can no longer contain his anger towards Adino.
                                     </p>
@@ -520,5 +522,26 @@
         
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script>
+            function copyToClipboardAndShowFeedback(element) {
+                var originalText = element.textContent.trim(); // Get current text
+                var textToCopy = element.getAttribute('data-copy');
+                
+                // Copy text to clipboard
+                var dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = textToCopy;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+                
+                // Show feedback
+                var feedbackElement = element.querySelector('.copied');
+                element.textContent = 'IP Copied!'; // Replace text with feedback
+                setTimeout(function() {
+                    element.textContent = originalText; // Restore original text after 1 second
+                }, 1000);
+            }
+        </script>
     </body>
 </html>
