@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battlepass Quest Generator</title>
+    <link rel="stylesheet" href="bpstyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Battlepass Quest Generator</h1>
+        
+        <div class="config-section">
+            <div class="config-grid">
+                <div class="quest-config">
+                    <h2>Quest Configuration</h2>
+                    <div class="input-group">
+                        <label>File Name:</label>
+                        <input type="text" id="fileName" value="quests.yml" placeholder="Enter file name">
+                    </div>
+                    <div class="input-group">
+                        <label>Starting Quest ID:</label>
+                        <input type="number" id="startingId" value="1" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label>Number of Quests:</label>
+                        <input type="number" id="questCount" value="1" min="1">
+                    </div>
+                </div>
+                <div class="quest-types">
+                    <h2>Quest Types</h2>
+                    <button id="toggleAll" class="toggle-btn">Toggle All Types</button>
+                    <div class="quest-type-grid">
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="block-break" checked>
+                            <label for="block-break">Break Blocks</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="block-place" checked>
+                            <label for="block-place">Place Blocks</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="bucket-place" checked>
+                            <label for="bucket-place">Place Bucket</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="chat" checked>
+                            <label for="chat">Chat Message</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="chat-stripped" checked>
+                            <label for="chat-stripped">Chat (Stripped)</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="right-click" checked>
+                            <label for="right-click">Right Click</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="left-click" checked>
+                            <label for="left-click">Left Click</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="right-click-block" checked>
+                            <label for="right-click-block">Right Click Block</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="left-click-block" checked>
+                            <label for="left-click-block">Left Click Block</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="consume" checked>
+                            <label for="consume">Consume Item</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="craft" checked>
+                            <label for="craft">Craft Items</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="damage-player" checked>
+                            <label for="damage-player">Damage Players</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="enchant" checked>
+                            <label for="enchant">Enchant (Table)</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="enchant-anvil" checked>
+                            <label for="enchant-anvil">Enchant (Anvil)</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="enchant-all" checked>
+                            <label for="enchant-all">Enchant (Any)</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="execute-command" checked>
+                            <label for="execute-command">Execute Command</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="fish" checked>
+                            <label for="fish">Fishing</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="gain-experience" checked>
+                            <label for="gain-experience">Gain Experience</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="item-break" checked>
+                            <label for="item-break">Break Item</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="fly" checked>
+                            <label for="fly">Flying</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="glide" checked>
+                            <label for="glide">Gliding</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="sneak" checked>
+                            <label for="sneak">Sneaking</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="sprint" checked>
+                            <label for="sprint">Sprinting</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="swim" checked>
+                            <label for="swim">Swimming</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="move" checked>
+                            <label for="move">Moving</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="kill-mob" checked>
+                            <label for="kill-mob">Kill Mobs</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="kill-player" checked>
+                            <label for="kill-player">Kill Players</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="login" checked>
+                            <label for="login">Login</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="milk" checked>
+                            <label for="milk">Milk Cow</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="playtime" checked>
+                            <label for="playtime">Playtime</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="throw-projectile" checked>
+                            <label for="throw-projectile">Throw Projectile</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="regenerate" checked>
+                            <label for="regenerate">Regenerate Health</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="ride-mob" checked>
+                            <label for="ride-mob">Ride Mob</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="shear" checked>
+                            <label for="shear">Shear Sheep</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="smelt" checked>
+                            <label for="smelt">Smelt Items</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="tame" checked>
+                            <label for="tame">Tame Pet</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="honey-extract" checked>
+                            <label for="honey-extract">Extract Honey</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="honey-comb-extract" checked>
+                            <label for="honey-comb-extract">Extract Honeycomb</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="breed" checked>
+                            <label for="breed">Breed Animals</label>
+                        </div>
+                        <div class="quest-type-item">
+                            <input type="checkbox" id="brew" checked>
+                            <label for="brew">Brew Potions</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rarity-config">
+            <h2>Rarity Configuration</h2>
+            <div class="rarity-type-tabs">
+                <button class="rarity-type-tab active" data-type="mobs">Mobs</button>
+                <button class="rarity-type-tab" data-type="mining">Mining</button>
+                <button class="rarity-type-tab" data-type="building">Building</button>
+                <button class="rarity-type-tab" data-type="items">Items</button>
+                <button class="rarity-type-tab" data-type="crafting">Crafting</button>
+                <button class="rarity-type-tab" data-type="smelting">Smelting</button>
+                <button class="rarity-type-tab" data-type="food">Food</button>
+                <button class="rarity-type-tab" data-type="other">Other Actions</button>
+            </div>
+
+            <!-- Mobs Rarity Config -->
+            <div class="rarity-type-content active" id="mobs-rarity">
+                <div class="rarity-section">
+                    <h3>Common Mobs</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="mobsCommonMin" value="10" min="1"> - 
+                        <input type="number" id="mobsCommonMax" value="30" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="mobsCommonPoints" value="5" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Rare Mobs</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="mobsRareMin" value="25" min="1"> - 
+                        <input type="number" id="mobsRareMax" value="50" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="mobsRarePoints" value="10" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Epic Mobs</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="mobsEpicMin" value="40" min="1"> - 
+                        <input type="number" id="mobsEpicMax" value="80" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="mobsEpicPoints" value="15" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mining Rarity Config -->
+            <div class="rarity-type-content" id="mining-rarity">
+                <div class="rarity-section">
+                    <h3>Common Mining</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="miningCommonMin" value="20" min="1"> - 
+                        <input type="number" id="miningCommonMax" value="50" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="miningCommonPoints" value="4" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Rare Mining</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="miningRareMin" value="40" min="1"> - 
+                        <input type="number" id="miningRareMax" value="80" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="miningRarePoints" value="8" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Epic Mining</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="miningEpicMin" value="60" min="1"> - 
+                        <input type="number" id="miningEpicMax" value="120" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="miningEpicPoints" value="12" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Building Rarity Config -->
+            <div class="rarity-type-content" id="building-rarity">
+                <div class="rarity-section">
+                    <h3>Common Building</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="buildingCommonMin" value="20" min="1"> - 
+                        <input type="number" id="buildingCommonMax" value="50" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="buildingCommonPoints" value="4" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Rare Building</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="buildingRareMin" value="40" min="1"> - 
+                        <input type="number" id="buildingRareMax" value="80" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="buildingRarePoints" value="8" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Epic Building</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="buildingEpicMin" value="60" min="1"> - 
+                        <input type="number" id="buildingEpicMax" value="120" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="buildingEpicPoints" value="12" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Items Rarity Config -->
+            <div class="rarity-type-content" id="items-rarity">
+                <div class="rarity-section">
+                    <h3>Common Items</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="itemsCommonMin" value="15" min="1"> - 
+                        <input type="number" id="itemsCommonMax" value="40" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="itemsCommonPoints" value="5" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Rare Items</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="itemsRareMin" value="30" min="1"> - 
+                        <input type="number" id="itemsRareMax" value="60" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="itemsRarePoints" value="10" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Epic Items</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="itemsEpicMin" value="50" min="1"> - 
+                        <input type="number" id="itemsEpicMax" value="100" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="itemsEpicPoints" value="15" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crafting Rarity Config -->
+            <div class="rarity-type-content" id="crafting-rarity">
+                <div class="rarity-section">
+                    <h3>Common Crafting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="craftingCommonMin" value="16" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="craftingCommonMax" value="48" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="craftingCommonPoints" value="5" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Rare Crafting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="craftingRareMin" value="12" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="craftingRareMax" value="32" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="craftingRarePoints" value="10" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Epic Crafting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="craftingEpicMin" value="8" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="craftingEpicMax" value="24" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="craftingEpicPoints" value="15" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smelting Rarity Config -->
+            <div class="rarity-type-content" id="smelting-rarity">
+                <div class="rarity-section">
+                    <h3>Common Smelting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="smeltingCommonMin" value="16" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="smeltingCommonMax" value="48" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="smeltingCommonPoints" value="5" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Rare Smelting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="smeltingRareMin" value="12" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="smeltingRareMax" value="32" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="smeltingRarePoints" value="10" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Epic Smelting</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="smeltingEpicMin" value="8" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="smeltingEpicMax" value="24" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="smeltingEpicPoints" value="15" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Rarity Config -->
+            <div class="rarity-type-content" id="food-rarity">
+                <div class="rarity-section">
+                    <h3>Common Food</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="foodCommonMin" value="10" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="foodCommonMax" value="32" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="foodCommonPoints" value="5" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Rare Food</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="foodRareMin" value="8" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="foodRareMax" value="24" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="foodRarePoints" value="10" min="1">
+                    </div>
+                </div>
+                <div class="rarity-section">
+                    <h3>Epic Food</h3>
+                    <div class="input-group">
+                        <label>Min Progress:</label>
+                        <input type="number" id="foodEpicMin" value="4" min="1">
+                        <label>Max Progress:</label>
+                        <input type="number" id="foodEpicMax" value="16" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="foodEpicPoints" value="15" min="1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Actions Rarity Config -->
+            <div class="rarity-type-content" id="other-rarity">
+                <div class="rarity-section">
+                    <h3>Common Actions</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="otherCommonMin" value="5" min="1"> - 
+                        <input type="number" id="otherCommonMax" value="20" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="otherCommonPoints" value="3" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Rare Actions</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="otherRareMin" value="15" min="1"> - 
+                        <input type="number" id="otherRareMax" value="40" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="otherRarePoints" value="6" min="1">
+                    </div>
+                </div>
+
+                <div class="rarity-section">
+                    <h3>Epic Actions</h3>
+                    <div class="input-group">
+                        <label>Progress Range:</label>
+                        <input type="number" id="otherEpicMin" value="30" min="1"> - 
+                        <input type="number" id="otherEpicMax" value="60" min="1">
+                        <label>Points:</label>
+                        <input type="number" id="otherEpicPoints" value="9" min="1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-config">
+            <h2>Items Lists</h2>
+            <div class="items-section">
+                <h3>Common Items</h3>
+                <div class="lists-grid">
+                    <div class="list-item">
+                        <h4>Mobs</h4>
+                        <textarea id="commonMobsList" placeholder="Enter common mob names, one per line">Zombie
+Skeleton
+Spider
+Creeper</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Mining</h4>
+                        <textarea id="commonMiningList" placeholder="Enter common mining blocks, one per line">Stone
+Coal_Ore
+Iron_Ore
+Copper_Ore</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Building</h4>
+                        <textarea id="commonBuildingList" placeholder="Enter common building blocks, one per line">Dirt
+Cobblestone
+Oak_Planks
+Stone_Bricks</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Items</h4>
+                        <textarea id="commonItemsList" placeholder="Enter common item names, one per line">Raw_Iron
+Coal
+Clay
+Sand</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Food</h4>
+                        <textarea id="commonFoodList" placeholder="Enter common food names, one per line">Bread
+Apple
+Carrot
+Potato</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Craftable</h4>
+                        <textarea id="commonCraftableList" placeholder="Enter common craftable items, one per line">Wooden_Planks
+Stick
+Torch
+Crafting_Table</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Smeltable</h4>
+                        <textarea id="commonSmeltableList" placeholder="Enter common smeltable items, one per line">Raw_Iron
+Raw_Copper
+Clay
+Sand</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items-section">
+                <h3>Rare Items</h3>
+                <div class="lists-grid">
+                    <div class="list-item">
+                        <h4>Mobs</h4>
+                        <textarea id="rareMobsList" placeholder="Enter rare mob names, one per line">Witch
+Enderman
+Blaze
+Piglin</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Mining</h4>
+                        <textarea id="rareMiningList" placeholder="Enter rare mining blocks, one per line">Diamond_Ore
+Gold_Ore
+Lapis_Ore
+Redstone_Ore</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Building</h4>
+                        <textarea id="rareBuildingList" placeholder="Enter rare building blocks, one per line">Quartz_Block
+Prismarine
+Purpur_Block
+Glazed_Terracotta</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Items</h4>
+                        <textarea id="rareItemsList" placeholder="Enter rare item names, one per line">Raw_Gold
+Redstone
+Lapis_Lazuli
+Quartz</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Food</h4>
+                        <textarea id="rareFoodList" placeholder="Enter rare food names, one per line">Golden_Apple
+Cooked_Salmon
+Pumpkin_Pie
+Rabbit_Stew</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Craftable</h4>
+                        <textarea id="rareCraftableList" placeholder="Enter rare craftable items, one per line">Iron_Block
+Gold_Block
+Redstone_Block
+Bookshelf</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Smeltable</h4>
+                        <textarea id="rareSmeltableList" placeholder="Enter rare smeltable items, one per line">Raw_Gold
+Ancient_Debris
+Netherrack
+Raw_Iron_Block</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items-section">
+                <h3>Epic Items</h3>
+                <div class="lists-grid">
+                    <div class="list-item">
+                        <h4>Mobs</h4>
+                        <textarea id="epicMobsList" placeholder="Enter epic mob names, one per line">Wither_Skeleton
+Elder_Guardian
+Evoker
+Ravager</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Mining</h4>
+                        <textarea id="epicMiningList" placeholder="Enter epic mining blocks, one per line">Ancient_Debris
+Emerald_Ore
+Obsidian
+Crying_Obsidian</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Building</h4>
+                        <textarea id="epicBuildingList" placeholder="Enter epic building blocks, one per line">Netherite_Block
+Beacon
+End_Crystal
+Dragon_Egg</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Items</h4>
+                        <textarea id="epicItemsList" placeholder="Enter epic item names, one per line">Diamond
+Emerald
+Netherite_Scrap
+Nether_Star</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Food</h4>
+                        <textarea id="epicFoodList" placeholder="Enter epic food names, one per line">Enchanted_Golden_Apple
+Golden_Carrot
+Chorus_Fruit
+Suspicious_Stew</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Craftable</h4>
+                        <textarea id="epicCraftableList" placeholder="Enter epic craftable items, one per line">Diamond_Block
+Emerald_Block
+Netherite_Block
+Beacon</textarea>
+                    </div>
+                    <div class="list-item">
+                        <h4>Smeltable</h4>
+                        <textarea id="epicSmeltableList" placeholder="Enter epic smeltable items, one per line">Diamond_Ore
+Emerald_Ore
+Ancient_Debris
+Raw_Gold_Block</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="generateQuests" class="generate-btn">Generate Quests</button>
+            <button id="copyOutput" class="copy-btn">Copy Output</button>
+            <button id="downloadYaml" class="download-btn">Download YAML</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Quests</h2>
+            <pre id="outputArea"></pre>
+        </div>
+    </div>
+    <script src="bpscript.js"></script>
+</body>
+</html>
