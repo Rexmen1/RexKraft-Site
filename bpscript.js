@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button id="saveMobsButton" class="modal-button save-button">Save</button>
                     <button id="resetMobsButton" class="modal-button reset-button">Reset</button>
                     <button class="modal-button close-button" id="closeMobsModal">
-                        <span>&times;</span>
+                        Close
                     </button>
                 </div>
             </div>
@@ -184,16 +184,17 @@ document.addEventListener('DOMContentLoaded', () => {
     manageMobsButton.addEventListener('click', () => {
         // Regenerate content to ensure latest data
         mobManagementModal.innerHTML = generateMobManagementModalContent();
+        
+        // Re-attach event listeners after regenerating content
+        document.getElementById('saveMobsButton').addEventListener('click', saveMobsHandler);
+        document.getElementById('resetMobsButton').addEventListener('click', resetMobsHandler);
+        document.getElementById('closeMobsModal').addEventListener('click', closeMobsHandler);
+        
         mobManagementModal.style.display = 'block';
     });
 
-    // Close Mob Management Modal
-    closeMobsModal.addEventListener('click', () => {
-        mobManagementModal.style.display = 'none';
-    });
-
-    // Save Mobs
-    saveMobsButton.addEventListener('click', () => {
+    // Save Mobs Handler
+    function saveMobsHandler() {
         const mobInputs = mobManagementModal.querySelectorAll('.mob-input');
         const updatedCategories = {};
 
@@ -228,14 +229,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save to localStorage
         localStorage.setItem('questCategories', JSON.stringify(QuestConfig.categories));
         
-        alert('Mob lists updated successfully!');
+        // Close the modal
+        mobManagementModal.style.display = 'none';
         
-        // Optional: Regenerate modal to show updated lists
-        mobManagementModal.innerHTML = generateMobManagementModalContent();
-    });
+        alert('Mob lists updated successfully!');
+    }
 
-    // Reset Mobs
-    resetMobsButton.addEventListener('click', () => {
+    // Reset Mobs Handler
+    function resetMobsHandler() {
         // Confirm reset
         if (!confirm('Are you sure you want to reset ALL mob lists to defaults?')) {
             return;
@@ -304,6 +305,23 @@ document.addEventListener('DOMContentLoaded', () => {
         mobManagementModal.innerHTML = generateMobManagementModalContent();
         
         alert('All mob lists reset to defaults!');
+    }
+
+    // Close Mobs Modal Handler
+    function closeMobsHandler() {
+        mobManagementModal.style.display = 'none';
+    }
+
+    // Initial event listener attachments
+    document.addEventListener('DOMContentLoaded', () => {
+        // Attach event listeners to initially created buttons
+        const saveMobsButton = document.getElementById('saveMobsButton');
+        const resetMobsButton = document.getElementById('resetMobsButton');
+        const closeMobsModal = document.getElementById('closeMobsModal');
+
+        if (saveMobsButton) saveMobsButton.addEventListener('click', saveMobsHandler);
+        if (resetMobsButton) resetMobsButton.addEventListener('click', resetMobsHandler);
+        if (closeMobsModal) closeMobsModal.addEventListener('click', closeMobsHandler);
     });
 
     generateButton.addEventListener('click', () => {
