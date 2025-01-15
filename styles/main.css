@@ -123,6 +123,31 @@ body, html {
     overflow: hidden;
 }
 
+.minecraft-button.active {
+    background-image: 
+        linear-gradient(to bottom, #2E8B57, #228B22),
+        repeating-linear-gradient(
+            45deg, 
+            rgba(0,0,0,0.05) 0%, 
+            rgba(0,0,0,0.05) 10%, 
+            transparent 10%, 
+            transparent 20%
+        );
+    background-blend-mode: overlay;
+    
+    border-image: 
+        repeating-linear-gradient(
+            45deg, 
+            #006400 0%, #006400 10%, 
+            #008000 10%, #008000 20%,
+            #2E8B57 20%, #2E8B57 30%,
+            #32CD32 30%, #32CD32 40%
+        ) 1;
+    
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
 .minecraft-button::before {
     content: '';
     position: absolute;
@@ -500,6 +525,39 @@ footer {
     }
 }
 
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: firework 1s ease-out;
+}
+
+@keyframes firework {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(20);
+        opacity: 0;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .minecraft-nav {
@@ -649,6 +707,37 @@ footer {
     color: #FFFFFF;
     font-size: 14px;
     opacity: 0.8;
+}
+
+.staff-card.inactive {
+    opacity: 0.6;
+    filter: grayscale(50%);
+    position: relative;
+}
+
+.staff-card.inactive::after {
+    content: 'INACTIVE';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.staff-card.inactive:hover {
+    opacity: 0.8;
+    filter: grayscale(50%);
+    transform: scale(1);
+}
+
+.inactive-staff .section-title {
+    color: #888;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
 }
 
 /* Player Testimonials Section */
