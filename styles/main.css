@@ -320,6 +320,13 @@ body, html {
 .cta-buttons {
     display: none;
 }
+.server-icon {
+    font-size: 2.5rem;  /* Large emoji icons */
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+    line-height: 1;
+}
 
 .server-preview {
     background-color: rgba(0,0,0,0.7);
