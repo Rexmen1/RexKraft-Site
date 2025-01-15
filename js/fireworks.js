@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const storeButton = document.querySelector('a.minecraft-button[href="#"]');
+    // Select all Store buttons across different pages
+    const storeButtons = document.querySelectorAll('a.minecraft-button:contains("Store")');
     
-    if (storeButton) {
-        storeButton.addEventListener('click', (e) => {
+    console.log('Store buttons found:', storeButtons.length);
+
+    storeButtons.forEach(storeButton => {
+        storeButton.addEventListener('mouseenter', (e) => {
+            console.log('Store button hovered!');
             e.preventDefault(); // Prevent default link behavior
             triggerFireworks();
         });
-    }
+    });
 
     function triggerFireworks() {
+        console.log('Triggering fireworks!');
         // Create fireworks container
         const fireworksContainer = document.createElement('div');
         fireworksContainer.classList.add('fireworks-container');
         document.body.appendChild(fireworksContainer);
 
         // Create multiple fireworks
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 20; i++) {
             createFirework(fireworksContainer);
         }
 
@@ -44,4 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
             firework.remove();
         });
     }
+
+    // Polyfill for :contains selector
+    jQuery.expr[':'].contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase()
+            .indexOf(m[3].toUpperCase()) >= 0;
+    };
 });

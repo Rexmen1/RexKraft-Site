@@ -785,3 +785,311 @@ footer {
 .testimonial-author span {
     color: #FFD700;
 }
+
+.store-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.store-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.store-nav {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 10px;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+.store-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+.store-nav ul li {
+    background: rgba(50, 50, 50, 0.8);
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Minecraft', sans-serif;
+    text-shadow: 2px 2px #4A4A4A;
+    font-size: 0.9em;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.store-nav ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg, 
+        transparent, 
+        rgba(255,255,255,0.3), 
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.store-nav ul li:hover::before {
+    left: 100%;
+}
+
+.store-nav ul li:hover {
+    transform: scale(1.05) rotateX(10deg);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.5),
+        inset 0 0 15px rgba(255,255,255,0.3);
+    animation: pulse 0.5s ease-in-out;
+}
+
+.store-nav ul li.active {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    text-shadow: 2px 2px #FFFFFF;
+    box-shadow: 
+        0 8px 16px rgba(0,0,0,0.4),
+        inset 0 0 20px rgba(255,255,255,0.4);
+    transform: scale(1.1) rotateX(15deg);
+    z-index: 20;
+    border-color: #FFD700;
+}
+
+.store-nav ul li.active::after {
+    content: '✓';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #00FF00;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.store-content .store-category {
+    display: none;
+}
+
+.store-content .store-category.active {
+    display: block;
+}
+
+.rank-comparison-table table {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.rank-comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+.rank-comparison-table thead {
+    background-color: #2E8B57;
+    color: white;
+}
+
+.rank-comparison-table th, 
+.rank-comparison-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.rank-comparison-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.rank-comparison-table tbody tr:nth-child(even) {
+    background-color: rgba(70, 70, 70, 0.6);
+}
+
+.rank-comparison-table tbody tr:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.rank-comparison-table .purchase-row {
+    background-color: rgba(20, 20, 20, 0.8) !important;
+}
+
+.rank-comparison-table .purchase-row td {
+    padding: 15px 10px;
+}
+
+.rank-comparison-table .purchase-row .minecraft-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.rank-comparison-table .purchase-row .minecraft-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.rank-purchase-section,
+.store-items,
+.store-item {
+    display: none;
+}
+
+.vote-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.vote-section {
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.vote-description {
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.vote-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vote-card {
+    background-color: rgba(70, 70, 70, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vote-card:hover {
+    transform: scale(1.05);
+}
+
+.vote-card img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.vote-card h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.vote-card p {
+    color: #CCCCCC;
+    font-size: 0.9em;
+}
+
+.vote-rewards {
+    margin-top: 30px;
+    background-color: rgba(70, 70, 70, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.vote-rewards h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.vote-rewards ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vote-rewards ul li {
+    color: #FFFFFF;
+    font-size: 1.1em;
+}
+
+.vote-all-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.vote-all-links .large-button {
+    font-size: 1.2em;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #CCCCCC;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.vote-all-links .large-button:hover {
+    background-color: rgba(70, 70, 70, 0.9);
+    color: #FFFFFF;
+    transform: scale(1.05);
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RexKraft - Store</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <nav class="minecraft-nav">
+                <ul class="nav-buttons">
+                    <li><a href="index.html" class="minecraft-button"><span class="button-icon">🏠</span> Home</a></li>
+                    <li><a href="#" class="minecraft-button"><span class="button-icon">📖</span> Wiki</a></li>
+                    <li><a href="vote.html" class="minecraft-button"><span class="button-icon">🗳️</span> Vote Links</a></li>
+                    <li><a href="#" class="minecraft-button"><span class="button-icon">🏆</span> Leaderboard</a></li>
+                    <li><a href="#" class="minecraft-button"><span class="button-icon">🔗</span> Bans</a></li>
+                    <li><a href="store.html" class="minecraft-button active"><span class="button-icon">🛒</span> Store</a></li>
+                    <li><a href="staff.html" class="minecraft-button"><span class="button-icon">👥</span> Staff</a></li>
+                    <li><a href="#" class="minecraft-button"><span class="button-icon">🗺️</span> Map</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="store-section">
+                <div class="store-categories">
+                    <nav class="store-nav">
+                        <ul>
+                            <li class="active" data-category="ranks">Ranks</li>
+                            <li data-category="crate-keys">Crate Keys</li>
+                            <li data-category="key-all">Key All</li>
+                            <li data-category="battlepass">Battle Pass</li>
+                            <li data-category="cosmetics">Cosmetics</li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="store-content">
+                        <div class="store-category active" id="ranks-category">
+                            <div class="rank-comparison-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>Buccaneer</th>
+                                            <th>Marauder</th>
+                                            <th>Gunner</th>
+                                            <th>Navigator</th>
+                                            <th>Bosun</th>
+                                            <th>Firstmate</th>
+                                            <th>Captain</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Bits Cost</td>
+                                            <td>75</td>
+                                            <td>150</td>
+                                            <td>250</td>
+                                            <td>500</td>
+                                            <td>750</td>
+                                            <td>1000</td>
+                                            <td>1500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VIP Slot</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✗</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Discord Role</td>
+                                            <td>Buccaneer</td>
+                                            <td>Marauder</td>
+                                            <td>Gunner</td>
+                                            <td>Navigator</td>
+                                            <td>Bosun</td>
+                                            <td>FirstMate</td>
+                                            <td>Captain</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In-Game Prefix</td>
+                                            <td>Buccaneer</td>
+                                            <td>Marauder</td>
+                                            <td>Gunner</td>
+                                            <td>Navigator</td>
+                                            <td>Bosun</td>
+                                            <td>FirstMate</td>
+                                            <td>Captain</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Auctions</td>
+                                            <td>5</td>
+                                            <td>7</td>
+                                            <td>10</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>25</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Homes</td>
+                                            <td>5</td>
+                                            <td>7</td>
+                                            <td>10</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>25</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Color on Signs</td>
+                                            <td>✗</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✗</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Color in Chat</td>
+                                            <td>✗</td>
+                                            <td>Occasional</td>
+                                            <td>Occasional</td>
+                                            <td>Occasional</td>
+                                            <td>Occasional</td>
+                                            <td>Occasional</td>
+                                            <td>✗</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Unique Commands</td>
+                                            <td>/nick, /hat, /craft, /ptime, /pweather</td>
+                                            <td>/condense, /uncondense, /head, /enderchest</td>
+                                            <td>/grindstone, /stonecutter, /loom, /cartographytable, /anvil</td>
+                                            <td>/fastplace, /glow, /jump, /top, /itemname, /nv, /itemframe, /me</td>
+                                            <td>/hdb, /Dye, Sign Editing, ArmorStand Editing</td>
+                                            <td>/ride, /fastplace, /itemframe</td>
+                                            <td>/createtag</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Claim Flags</td>
+                                            <td>✗</td>
+                                            <td>✗</td>
+                                            <td>✗</td>
+                                            <td>✗</td>
+                                            <td>NoVehicle, RaidMemberOnly, NoSnowForm, NoIceForm, NoFluidFlow</td>
+                                            <td>Multiple Flags (Enter/Exit, NoFlight, NoItemDrop, etc.)</td>
+                                            <td>✗</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kit Available</td>
+                                            <td>/Kit Buccaneer [14D]</td>
+                                            <td>/Kit Marauder [14D]</td>
+                                            <td>/Kit Gunner [14D]</td>
+                                            <td>/Kit Navigator [14D]</td>
+                                            <td>/Kit Bosun [14D]</td>
+                                            <td>/Kit FirstMate [14D]</td>
+                                            <td>/Kit Captain [14D]</td>
+                                        </tr>
+                                        <tr class="purchase-row">
+                                            <td colspan="1">Purchase Rank</td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Buccaneer">75 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Marauder">150 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Gunner">250 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Navigator">500 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Bosun">750 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Firstmate">1000 Bits</button>
+                                            </td>
+                                            <td>
+                                                <button class="minecraft-button" data-rank="Captain">1500 Bits</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p class="pixel-text">&copy; 2025 RexKraft. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="minecraft-button">Discord</a>
+                    <a href="#" class="minecraft-button">Twitter</a>
+                    <a href="#" class="minecraft-button">YouTube</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/store-nav.js"></script>
+</body>
+</html>
