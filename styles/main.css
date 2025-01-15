@@ -1093,25 +1093,3 @@ footer {
     color: #FFFFFF;
     transform: scale(1.05);
 }
-
-/* Performance Optimization Hints */
-* {
-    will-change: transform, opacity;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-/* Reduce layout shifts */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Hardware acceleration */
-.minecraft-button, 
-.staff-card, 
-.vote-card, 
-.store-item {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
