@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rexkraft.com/sitemap.xml
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 10
+
+# Directories to avoid
+Disallow: /private/
+Disallow: /admin/
+Disallow: /js/
+Disallow: /unused/
+
+# Specific instructions for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 5
