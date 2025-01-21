@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RexKraft - Vote Links</title>
     <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Minecraft" rel="stylesheet">
 </head>
@@ -25,53 +24,60 @@
         </header>
 
         <main>
-            <section class="vote-links">
-                <h1 class="pixel-text">Vote for RexKraft</h1>
-                <div class="vote-description">
-                    <p>Help support our server by voting! Each vote helps us grow and provides you with awesome rewards.</p>
-                </div>
+            <section class="vote-page-content">
+                <div class="vote-links-container">
+                    <div class="vote-links-section">
+                        <h2 class="section-title">Vote Links</h2>
+                        <div class="vote-description">
+                            <p>Help support our server by voting! Each vote helps us grow and provides you with awesome rewards.</p>
+                        </div>
 
-                <div class="vote-links-grid">
-                    <div class="vote-card">
-                        <h3>Planet Minecraft</h3>
-                        <a href="https://tinyurl.com/rkpmc" target="_blank" class="minecraft-button">Vote PMC</a>
+                        <div class="vote-links-grid">
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rkpmc" target="_blank" class="minecraft-button">Vote PMC</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rkmcsl" target="_blank" class="minecraft-button">Vote MCSL</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rkmcmp" target="_blank" class="minecraft-button">Vote MCMP</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rkmsog" target="_blank" class="minecraft-button">Vote MSO</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rkmcsn" target="_blank" class="minecraft-button">Vote MSN</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rktopg" target="_blank" class="minecraft-button">Vote TOPG</a>
+                            </div>
+
+                            <div class="vote-card">
+                                <a href="https://tinyurl.com/rktmcs" target="_blank" class="minecraft-button">Vote TMCS</a>
+                            </div>
+                        </div>
+
+                        <div class="vote-all-links">
+                            <button id="open-all-votes" class="minecraft-button large-button">
+                                <span class="button-icon">🌐</span> Open All Vote Links
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="vote-card">
-                        <h3>Minecraft Server List</h3>
-                        <a href="https://tinyurl.com/rkmcsl" target="_blank" class="minecraft-button">Vote MCSL</a>
+                    <div class="top-voters-section">
+                        <h2 class="section-title">Top Voters</h2>
+                        <div class="vote-description">
+                            <p>Top voters get special recognition and exclusive in-game rewards.</p>
+                        </div>
+                        <div id="top-voters-list" class="top-voters-grid">
+                            <!-- Top voters will be dynamically populated by JavaScript -->
+                        </div>
                     </div>
-
-                    <div class="vote-card">
-                        <h3>Minecraft MP</h3>
-                        <a href="https://tinyurl.com/rkmcmp" target="_blank" class="minecraft-button">Vote MCMP</a>
-                    </div>
-
-                    <div class="vote-card">
-                        <h3>Minecraft Server Org</h3>
-                        <a href="https://tinyurl.com/rkmsog" target="_blank" class="minecraft-button">Vote MSO</a>
-                    </div>
-
-                    <div class="vote-card">
-                        <h3>Minecraft Server Net</h3>
-                        <a href="https://tinyurl.com/rkmcsn" target="_blank" class="minecraft-button">Vote MSN</a>
-                    </div>
-
-                    <div class="vote-card">
-                        <h3>Top Gaming Servers</h3>
-                        <a href="https://tinyurl.com/rktopg" target="_blank" class="minecraft-button">Vote TOPG</a>
-                    </div>
-
-                    <div class="vote-card">
-                        <h3>Top Minecraft Servers</h3>
-                        <a href="https://tinyurl.com/rktmcs" target="_blank" class="minecraft-button">Vote TMCS</a>
-                    </div>
-                </div>
-
-                <div class="vote-all-links">
-                    <button id="open-all-votes" class="minecraft-button large-button">
-                        <span class="button-icon">🌐</span> Open All Vote Links
-                    </button>
                 </div>
             </section>
         </main>
@@ -92,5 +98,6 @@
     <script src="js/main.js"></script>
     <script src="js/fireworks.js"></script>
     <script src="js/vote.js"></script>
+    <script src="js/top-voters.js"></script>
 </body>
 </html>

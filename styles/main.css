@@ -12,6 +12,27 @@
     src: url('../assets/minecraft-font.ttf') format('truetype');
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: var(--minecraft-text);
+    text-align: center;
+    padding: 20px;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -349,7 +370,7 @@ body, html {
     padding: 20px;
     max-width: 300px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .server-card:hover {
@@ -481,13 +502,6 @@ body, html {
     color: #FFD700;
     opacity: 0.8;
     margin-left: 10px;
-}
-
-footer {
-    background-color: rgba(0,0,0,0.8);
-    color: var(--minecraft-text);
-    text-align: center;
-    padding: 20px;
 }
 
 .social-links {
@@ -623,11 +637,16 @@ footer {
 }
 
 .section-title {
-    font-family: 'Minecraft', monospace;
     color: #FFD700;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 3;
 }
 
 .offer-cards {
@@ -798,7 +817,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .vote-description {
@@ -808,27 +827,31 @@ footer {
 
 .vote-links-grid {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .vote-card {
-    background-color: rgba(70, 70, 70, 0.9);
+    background-color: transparent;
+    border: none;
     border-radius: 10px;
-    padding: 20px;
-    width: 250px;
+    padding: 10px;
+    width: calc(50% - 30px);
+    max-width: 250px;
     text-align: center;
     transition: transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.vote-card:hover {
-    transform: scale(1.05);
-}
-
-.vote-card h3 {
-    color: #FFD700;
-    margin-bottom: 15px;
+.vote-card .minecraft-button {
+    width: 100%;
+    padding: 10px 15px;
 }
 
 .vote-all-links {
@@ -992,4 +1015,163 @@ footer {
 .store-items,
 .store-item {
     display: none;
+}
+
+.vote-page-content {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    flex-grow: 1;
+}
+
+.vote-links-container {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 30px;
+    width: 100%;
+    position: relative;
+    margin-top: -30px;
+}
+
+.vote-links-container::before {
+    content: '';
+    grid-column: 2;
+    background-color: rgba(255, 215, 0, 0.3);
+    z-index: 1;
+}
+
+.vote-links-section,
+.top-voters-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 650px;
+}
+
+.vote-links-section {
+    grid-column: 1;
+    padding-right: 15px;
+}
+
+.top-voters-section {
+    grid-column: 3;
+    padding-left: 15px;
+}
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vote-description {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vote-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.top-voters-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+}
+
+.top-voters-row {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    width: 100%;
+}
+
+.top-voter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 13px;
+    padding: 6.5px;
+    width: calc(20% - 26px);
+    max-width: 195px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.top-voter-avatar {
+    width: 65px;
+    height: 130px;
+    object-fit: contain;
+    margin-bottom: 6.5px;
+}
+
+.top-voter-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.91em;
+}
+
+.top-voter-name {
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 3.9px;
+}
+
+.top-voter-votes {
+    color: #CCCCCC;
+    font-size: 0.78em;
+}
+
+.top-voter-rank {
+    width: 26px;
+    height: 26px;
+    background-color: #FFD700;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.91em;
+    margin-top: 6.5px;
+}
+
+.vote-card,
+.top-voter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(50% - 30px);
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vote-card:hover,
+.top-voter-card:hover {
+    transform: scale(1.05);
+}
+
+.vote-card .minecraft-button {
+    width: 100%;
+    padding: 10px 15px;
 }
